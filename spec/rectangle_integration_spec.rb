@@ -11,4 +11,12 @@ describe('the rectangle path', {:type => :feature}) do
     click_button('Go!')
     expect(page).to have_content('This is a square.')
   end
+
+  it('processes the user entry and returns whether it is a square or not') do
+    visit('/')
+    fill_in('length', :with => '5')
+    fill_in('width', :with => '7')
+    click_button('Go!')
+    expect(page).to have_content('This is not a square.')
+  end
 end
