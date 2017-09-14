@@ -13,7 +13,7 @@ end
 post('/output') do
   @length = params.fetch("length")
   @width = params.fetch("width")
-  rectangle = Shape::Rectangle.new(@length, @width)
+  rectangle = Shape::Rectangle.new({length: @length, width: @width})
   if rectangle.square?
     @string_to_display = "This is a square."
   else
